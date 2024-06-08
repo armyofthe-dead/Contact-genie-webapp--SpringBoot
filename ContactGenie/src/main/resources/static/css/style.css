@@ -1,0 +1,81 @@
+
+.banner{
+	
+	width: 100%;
+	height: 93vh;
+	background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.8)),url(../img/back.jpg);
+	background-size:cover;
+	color:white;
+}
+
+.bg-sky{
+	background:#009688 ! important;
+}
+
+.my-card{
+	padding: 20px;
+	background: #FFFFFF
+}
+
+.text-comic-sans {
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+}
+
+/* Sidebar Css */
+
+.sidebar {
+  width: 18%;
+  background: white;
+  height: 100%;
+  position: fixed;
+  padding-top: 45px;
+}
+
+.sidebar a {
+  display: block;
+  width: 100%;
+  padding: 10px 25px;
+  text-decoration: none;
+  color: gray;
+}
+
+.sidebar a:hover {
+  background: #e2e2e2;
+}
+
+.sidebar .divider {
+  height: .5px;
+  width: 100%;
+  margin-top: 10px;
+  background: #e2e2e2;
+}
+
+@media only screen and (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+  .content {
+    margin-left: 0;
+  }
+}
+
+.content {
+  margin-left: 20%;
+}
+
+.crossBtn{
+	position: absolute;
+	top:0;
+	right:35px;
+	font-size:25px;
+	cursor:pointer;
+}
+
+.my_profile_photo{
+	
+	height: 30px;
+	width:  30px;
+	
+	
+	
+}

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::Layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${title}">Document</title>
+</head>
+
+<body>
+	<section>
+		
+		<div class="card mr-3 ml-3 text-dark ">
+		<div class="card-body">
+		<h1 class="text-dark">Iam contact page</h1>
+		<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      
+      
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Action</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+   
+    <tr th:each="c : ${contacts}">
+      <th th:text="${'CG-'+ c.cid}" scope="row">1</th>
+      
+<td>
+    <img src="" class="my_profile_photo img-fluid rounded-circle" th:src="@{'/img/'+${c.image}}" alt="profile photo" />
+    <span th:text="${c.contactName}"></span>
+</td>
+
+      <td>
+      
+      <a th:href="@{'/user/contactDetail/'+${c.cid}}">
+      <span th:text="${c.Email}"></span>
+      </a>
+      </td>
+      <td th:text="${c.phoneNumber}">Otto</td>
+      <td>
+      <button class="btn btn-success btn-sm">Update</button>
+      <button class="btn btn-danger btn-sm">Delete</button>
+      
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<!-- Pagination Component
+ -->	
+ 
+ <nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li th:if="${currentPage != 0}" class="page-item"><a class="page-link" th:href="@{'/user/showContacts/' + ${currentPage-1}}">Previous</a></li>
+<li th:classappend="${currentPage == (i-1) ? 'active' : ''}" th:each="i : ${#numbers.sequence(1, totalPages)}" class="page-item">
+  <a class="page-link" th:href="@{'/user/showContacts/' + ${i-1}}">
+    <span th:text="${i}"></span>
+  </a>
+</li>
+    <li th:if="${currentPage+1 != totalPages }" class="page-item"><a class="page-link" th:href="@{'/user/showContacts/' + ${currentPage+1}}">Next</a></li>
+  </ul>
+</nav>
+ 
+ 	</div>
+		
+		
+</div>
+		
+	</section>
+</body>
+
+</html>

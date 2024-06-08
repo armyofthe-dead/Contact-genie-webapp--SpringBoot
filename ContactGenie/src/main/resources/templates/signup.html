@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::Layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${title}">Document</title>
+</head>
+
+<body>
+	<section>
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-8 offset-md-2">
+					<div class="my-card mt-3 " style="border-radius: 15px">
+
+						<div th:if="${message}" th:classappend="${message.type} + ' alert'" role="alert">
+							<p th:text="${message.content}"></p>
+
+
+						</div>
+
+						<div class="container text-center">
+							<img style="width: 50px" class="" th:src="@{./img/signup.png}">
+						</div>
+
+						<h1 class="text-center text-dark text-comic-sans">Register Here..</h1>
+
+
+
+						<form novalidate th:action="@{/do_register}" class="text-dark" th:object="${user}"
+							th:method="post">
+							<div class="form-group">
+								<label for="exampleInputName">Name</label>
+								<input required name="name" th:value="${user.name}" type="text"
+									th:classappend="${#fields.hasErrors('name')} ? 'is-invalid' : ''"
+									class="form-control " id="exampleInputName" aria-describedby="nameHelp"
+									placeholder="Enter Name" />
+								<div class="invalid-feedback" th:if="${#fields.hasErrors('name')}"
+									th:each="error : ${#fields.errors('name')}" th:text="${error}"></div>
+							</div>
+
+
+
+							<div class="form-group">
+								<label for="exampleInputEmail">Email</label> <input th:value="${user.email}"
+									name="email" required type="email" class="form-control" id="exampleInputEmail"
+									aria-describedby="emailHelp" placeholder="Enter Email">
+
+							</div>
+
+							<div class="form-group">
+								<label for="exampleInputPassword1">Password</label> <input required name="password"
+									type="password" class="form-control" id="exampleInputPassword1"
+									placeholder="Password">
+							</div>
+
+							<div class="form-group">
+								About
+								<textarea name="about" rows="5" placeholder="Enter something yourselt"
+									class="form-control"></textarea>
+							</div>
+
+							<div class="form-check">
+								<input name="agreement" type="checkbox" class="form-check-input" id="exampleCheck1">
+								<label class="form-check-label" for="exampleCheck1">Agree terms and conditions</label>
+							</div>
+							<div class="container text-center mt-3">
+
+								<button type="submit" class="btn bg-sky text-white ">Submit</button>
+								<button type="reset" class="btn btn-warning text-white">Reset</button>
+
+							</div>
+						</form>
+
+
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+	</section>
+</body>
+
+</html>
