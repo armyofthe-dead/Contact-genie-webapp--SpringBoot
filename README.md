@@ -35,7 +35,7 @@ Oracle database
 
 Installation and Setup
 
-Clone the repository: git clone https://github.com/sKyi01/contact-genie-webapp-springboot.git
+Clone the repository: https://github.com/armyofthe-dead/Contact-genie-webapp--SpringBoot
 
 Navigate to the project directory: cd ContactGenie
 
@@ -60,6 +60,6 @@ ContactGenie is released under the MIT License.
 ## Contact
 If you have any questions or suggestions regarding the application, feel free to reach out to the project maintainers:
 
-Your Name: akashkhandagale038@gmail.com
+Your Name: jajurekunal@gmail.com
 
 Happy Contact Managing with ContactGenie! 🧞‍♂️
